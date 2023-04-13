@@ -1,13 +1,10 @@
 import dotenv from "dotenv";
-import { config } from "dotenv";
 import { ConfigDictionary } from "../interfaces/config";
 
-dotenv.config();
-
 if (process.env.NODE_ENV === "production") {
-  config({ path: ".env.production" });
+  dotenv.config({ path: ".env.production" });
 } else {
-  config({ path: ".env.development" });
+  dotenv.config({ path: ".env.development" });
 }
 
 const ENV: string = process.env.NODE_ENV || "development";
