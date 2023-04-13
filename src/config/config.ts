@@ -1,6 +1,8 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import { config } from "dotenv";
 import { ConfigDictionary } from "../interfaces/config";
+
+dotenv.config();
 
 if (process.env.NODE_ENV === "production") {
   config({ path: ".env.production" });
@@ -16,7 +18,7 @@ const CONFIG: ConfigDictionary = {
       PORT: Number(process.env.PORT) || 4001,
     },
     db: {
-      url: "http://localhost:3000",
+      uri: String(process.env.MONGODB_URI),
     },
   },
   production: {
@@ -24,9 +26,12 @@ const CONFIG: ConfigDictionary = {
       PORT: Number(process.env.PORT) || 4002,
     },
     db: {
-      url: "http://localhost:4000",
+      uri: String(process.env.MONGODB_URI),
     },
   },
 };
+
+console.log(process.env.MONGODB_URI);
+
 
 export default CONFIG[ENV];

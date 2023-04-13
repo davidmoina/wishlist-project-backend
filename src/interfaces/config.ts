@@ -3,7 +3,7 @@ export interface AppConfig {
 }
 
 export interface DbConfig {
-  url: string;
+  uri: string;
 }
 
 export interface Config {
