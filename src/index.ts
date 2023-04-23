@@ -2,11 +2,6 @@ import app from './server';
 import config from './config/config'
 import connectDB from './db/connect';
 
-// app.listen(config.app.PORT, () => {
-//   console.log(`Server is running on port: ${config.app.PORT}`);
-  
-// })
-
 connectDB().then(async function onServerInit(){
   console.log("Database connected");
   

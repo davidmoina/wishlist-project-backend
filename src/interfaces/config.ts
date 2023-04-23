@@ -1,5 +1,5 @@
 export interface AppConfig {
-  PORT: number | undefined;
+  PORT: number | undefined,
 }
 
 export interface DbConfig {
