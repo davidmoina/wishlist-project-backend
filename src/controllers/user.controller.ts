@@ -9,7 +9,7 @@ export const signUp = async(req: Request, res: Response) => {
     const user = await UserModel.findOne({email});
 
     if(user) {
-      res.status(200).send({msg: "User already exists", _id: user._id})
+      res.status(200).send({msg: "User exists", _id: user._id})
       return
     }
 

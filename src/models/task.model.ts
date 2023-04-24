@@ -4,6 +4,7 @@ const TaskSchema = new Schema({
   text: {type: String, required: true},
   done: { type: Boolean, default: false },
   isEditing: { type: Boolean, default: false },
+  archived: {type: Boolean, default: false}, 
   author: {type: Schema.Types.ObjectId, ref: "User"} 
 }, {
   timestamps: true
